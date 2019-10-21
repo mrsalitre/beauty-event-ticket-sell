@@ -2,6 +2,7 @@
   <div>
     <Hero />
     <EventInfo />
+    <Patrons />
   </div>
 </template>
 
@@ -12,7 +13,9 @@ export default {
   components: {
     Hero,
     EventInfo: () =>
-      import(/* webpackChunkName: "EventInfo" */ "@/components/EventInfo.vue")
+      import(/* webpackChunkName: "EventInfo" */ "@/components/EventInfo.vue"),
+    Patrons: () =>
+      import(/* webpackChunkName: "EventInfo" */ "@/components/Patrons.vue")
   }
 };
 </script>
