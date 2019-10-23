@@ -1,15 +1,17 @@
 <template>
-  <div class="container mx-auto py-12 md:px-16">
-    <div class="flex flex-wrap justify-center">
-      <div
-        v-for="feature in features"
-        :key="feature.title"
-        class="w-full md:w-1/3 px-6 flex justify-center"
-      >
-        <Feature :feature="feature" />
+  <section id="features">
+    <div class="container mx-auto py-12 md:px-16">
+      <div class="flex flex-wrap justify-center">
+        <div
+          v-for="feature in features"
+          :key="feature.title"
+          class="w-full md:w-1/3 px-6 flex justify-center"
+        >
+          <Feature :feature="feature" />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 export default {

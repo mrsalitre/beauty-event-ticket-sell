@@ -5,6 +5,7 @@
     <Patrons />
     <Features />
     <Schedule />
+    <Contact />
   </div>
 </template>
 
@@ -21,7 +22,9 @@ export default {
     Features: () =>
       import(/* webpackChunkName: "Features" */ "@/components/Features.vue"),
     Schedule: () =>
-      import(/* webpackChunkName: "Schedule" */ "@/components/Schedule.vue")
+      import(/* webpackChunkName: "Schedule" */ "@/components/Schedule.vue"),
+    Contact: () =>
+      import(/* webpackChunkName: "Contact" */ "@/components/Contact.vue")
   }
 };
 </script>
