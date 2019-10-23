@@ -4,6 +4,7 @@
     <EventInfo />
     <Patrons />
     <Features />
+    <Schedule />
   </div>
 </template>
 
@@ -18,7 +19,9 @@ export default {
     Patrons: () =>
       import(/* webpackChunkName: "Patrons" */ "@/components/Patrons.vue"),
     Features: () =>
-      import(/* webpackChunkName: "Features" */ "@/components/Features.vue")
+      import(/* webpackChunkName: "Features" */ "@/components/Features.vue"),
+    Schedule: () =>
+      import(/* webpackChunkName: "Schedule" */ "@/components/Schedule.vue")
   }
 };
 </script>
