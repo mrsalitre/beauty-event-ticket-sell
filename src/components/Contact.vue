@@ -1,13 +1,13 @@
 <template>
   <section id="contact">
     <div
-      class="h-auto bg-cover bg-no-repeat bg-center py-12"
+      class="h-auto bg-cover bg-no-repeat bg-center py-20"
       :style="{
         backgroundImage: `url(${require('@/assets/contact-bg.jpg')})`
       }"
     >
       <div
-        class="flex flex-wrap justify-center rounded items-center shadow-lg bg-white mx-4 md:mx-10"
+        class="flex flex-wrap justify-center rounded-lg items-center shadow-lg bg-white mx-4 md:mx-10"
       >
         <div class="w-full md:w-1/2 p-10">
           <form class="w-full max-w-lg">
@@ -74,7 +74,7 @@
         <div class="w-full md:w-1/2">
           <iframe
             width="100%"
-            height="450"
+            height="500"
             frameborder="0"
             style="border:0"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.7917880883674!2d-15.428442885452236!3d28.12237481373822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40957476703b99%3A0x9e8d4979f1966a75!2sTAO%20Club%20%26%20Garden!5e0!3m2!1ses!2ses!4v1571871312528!5m2!1ses!2ses"

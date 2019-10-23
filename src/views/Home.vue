@@ -6,6 +6,7 @@
     <Features />
     <Schedule />
     <Contact />
+    <Footer />
   </div>
 </template>
 
@@ -24,7 +25,9 @@ export default {
     Schedule: () =>
       import(/* webpackChunkName: "Schedule" */ "@/components/Schedule.vue"),
     Contact: () =>
-      import(/* webpackChunkName: "Contact" */ "@/components/Contact.vue")
+      import(/* webpackChunkName: "Contact" */ "@/components/Contact.vue"),
+    Footer: () =>
+      import(/* webpackChunkName: "Footer" */ "@/components/Footer.vue")
   }
 };
 </script>
