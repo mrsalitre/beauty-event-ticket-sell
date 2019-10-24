@@ -37,7 +37,7 @@ exports.sendMail = functions.https.onCall((data, context) => {
         const mailOptions = {
           from: `Servidor de Jean Ayala <noreply@torinoautocasión.com>`,
           subject: `Mensaje de contacto`,
-          to: ["ayalajeancarlos.91@gmail.com"]
+          to: ["ayalajeancarlos.91@gmail.com", "rlopez@cocosolution.com"]
         };
         mailOptions.text = itemsText;
         return mailTransport.sendMail(mailOptions);
