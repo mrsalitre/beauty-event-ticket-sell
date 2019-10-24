@@ -24,7 +24,7 @@
           </p>
           <!-- <img class="object-none object-center" src="../assets/logo.png" alt="Logo de Adela Caicova"> -->
           <a
-            href="#"
+            href="#contact"
             class="bg-transparent hover:bg-white text-white font-semibold hover:text-black border border-white hover:border-transparent rounded-full py-2 px-3"
             >Comprar entradas</a
           >

@@ -82,7 +82,7 @@
       </div>
       <div class="w-full text-center mt-8">
         <a
-          href="#"
+          href="#contact"
           class="bg-transparent hover:bg-white text-white font-semibold hover:text-black border border-white hover:border-transparent rounded-full py-2 px-3"
           >Comprar entradas</a
         >

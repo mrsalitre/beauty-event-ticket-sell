@@ -88,7 +88,7 @@
       <div class="flex justify-center mt-8">
         <div class="w-auto">
           <a
-            href="#"
+            href="#contact"
             class="bg-transparent hover:bg-black text-black font-semibold hover:text-white border border-black hover:border-transparent rounded-full py-2 px-3"
           >
             Comprar entradas
