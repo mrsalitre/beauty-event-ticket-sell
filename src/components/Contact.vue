@@ -10,7 +10,7 @@
         class="flex flex-wrap justify-center rounded-lg items-center shadow-lg bg-white mx-4 md:mx-10"
       >
         <div class="w-full md:w-1/2 p-10">
-          <form @submit.prevent="validate()" class="w-full">
+          <form @submit.prevent="sendMessage()" class="w-full">
             <div class="flex flex-wrap -mx-3">
               <div class="w-full px-3">
                 <input
@@ -68,7 +68,7 @@
                 type="submit"
                 class="bg-transparent hover:bg-yellow-600 text-black font-semibold hover:text-white border border-yellow-600 hover:border-transparent rounded-lg py-2 px-3"
               >
-                Enviar
+                {{sendText}}
               </button>
             </div>
           </form>
@@ -89,10 +89,13 @@
   </section>
 </template>
 <script>
+import { functions } from "@/plugins/firebase";
+
 export default {
   name: "Contact",
   data() {
     return {
+      sending: false,
       errors: [],
       name: "",
       phone: "",
@@ -131,20 +134,44 @@ export default {
         if (!message) {
           this.errors.push("Por favor rellene el campo Mensaje.");
         } else if (name.length > 500) {
-          this.errors.push("El campo Mensaje no debe superar los 500 caracteres");
+          this.errors.push(
+            "El campo Mensaje no debe superar los 500 caracteres"
+          );
         }
-        if (errorsDisplay) {
-          resolve(true)
+        if (!this.errorsDisplay) {
+          resolve(true);
         } else {
-          let err = this.errors
-          reject(err)
+          let err = this.errors;
+          reject(err);
         }
-      })
+      });
+    },
+    sendMessage: function() {
+      this.validate()
+        .then(() => {
+          this.sending = true;
+          functions.httpsCallable("sendMail")({
+            name: this.name,
+            phone: this.phone,
+            email: this.email,
+            message: this.message
+          });
+        })
+        .then(() => {
+          this.sending = false;
+          this.name = "";
+          this.phone = "";
+          this.email = "";
+          this.message = "";
+        });
     }
   },
   computed: {
     errorsDisplay: function() {
       return this.errors.length > 0 ? true : false;
+    },
+    sendText: function() {
+      return this.sending ? 'Enviado...' : 'Enviar'
     }
   }
 };
