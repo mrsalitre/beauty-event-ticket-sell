@@ -68,7 +68,7 @@
                 type="submit"
                 class="bg-transparent hover:bg-yellow-600 text-black font-semibold hover:text-white border border-yellow-600 hover:border-transparent rounded-lg py-2 px-3"
               >
-                {{sendText}}
+                {{ sendText }}
               </button>
             </div>
           </form>
@@ -171,7 +171,7 @@ export default {
       return this.errors.length > 0 ? true : false;
     },
     sendText: function() {
-      return this.sending ? 'Enviado...' : 'Enviar'
+      return this.sending ? "Enviado..." : "Enviar";
     }
   }
 };
