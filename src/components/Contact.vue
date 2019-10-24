@@ -164,9 +164,7 @@ export default {
         } else if (!emailPttr.test(email)) {
           this.errors.push("El campo E-mail debe ser un correo válido.");
         }
-        if (!message) {
-          this.errors.push("Por favor rellene el campo Mensaje.");
-        } else if (name.length > 500) {
+        if (message.length > 500) {
           this.errors.push(
             "El campo Mensaje no debe superar los 500 caracteres"
           );
@@ -233,7 +231,7 @@ export default {
       return this.errors.length > 0 ? true : false;
     },
     sendText: function() {
-      return this.sending ? "Enviado..." : "Enviar";
+      return this.sending ? "Enviando..." : "Enviar";
     }
   }
 };

@@ -24,14 +24,14 @@ exports.sendMail = functions.https.onCall((data, context) => {
         let attendees = data.attendees
           .map(attendee => {
             return `
-            ${attendee}`;
+            - ${attendee}`;
           })
           .join(" ");
         let itemsText = `
         Nombre: ${data.name},
         Teléfono: ${data.phone}
         Email: ${data.email},
-        Mensaje: ${data.message}
+        Mensaje: ${data.message ? data.message : "No ha dejado mensaje"}
         Asistentes: ${attendees}
         `;
         const mailOptions = {
@@ -78,9 +78,7 @@ function validate(data) {
     } else if (!emailPttr.test(email)) {
       errors.push("El campo E-mail debe ser un correo válido.");
     }
-    if (!message) {
-      errors.push("Por favor rellene el campo Mensaje.");
-    } else if (name.length > 500) {
+    if (message.length > 500) {
       errors.push("El campo Mensaje no debe superar los 500 caracteres");
     }
     for (let index = 0; index < data.attendees.length; index++) {
